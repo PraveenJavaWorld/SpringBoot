@@ -1,0 +1,17 @@
+h1,h4{
+    text-align: center;
+}
+.control-label:after{
+    content: "*";
+    color: red;
+}
+body{
+    background-color: #eeeeee;
+}
+#div1{
+    background-color: white;
+}
+#heading{
+    background-color: purple;
+    color: white;
+}
