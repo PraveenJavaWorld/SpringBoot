@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Save Employee</title>
+</head>
+<body>
+	<form th:action="@{/emp/save}" method="POST" th:object="${emp}">
+		<table border="1" align="center" bgcolor="cyan">
+			<tr>
+				<td>Name::</td>
+				<td><input th:field="*{name}"/></td>
+			</tr>
+			<tr>
+				<td>Salary::</td>
+				<td><input th:field="*{salary}"/></td>
+			</tr>
+			<tr>
+				<td>Captcha::</td>
+				<td><input type="image" th:src="*{'data:image/png;base64,'+ image}">
+				<input type="hidden" th:field="*{answer}"/></td>
+			</tr>
+			<tr>
+				<td>Enter Captcha::</td>
+				<td><input th:field="*{captcha}"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Save"></td>
+			</tr>
+		</table>
+	</form>
+	<div th:if="${message!=null}">
+		<h2 style="text-align: center;color: green;" th:text="${message}"></h2>
+	</div>
+</body>
+</html>
